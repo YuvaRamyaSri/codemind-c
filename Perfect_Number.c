@@ -10,7 +10,7 @@ int main()
             s=s+i;
         }
     }
-    if(s==n)
+    if(n==s)
     {
         printf("True");
     }
