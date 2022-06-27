@@ -1,7 +1,7 @@
 #include<stdio.h>
 int digit_count(int n)
 {
-    int dc=0,d;
+    int d,dc=0;
     if(n==0)
     {
         return 1;
@@ -16,7 +16,7 @@ int digit_count(int n)
 }
 int main()
 {
-    int n,arr[1000],dc,i,c=0,k;
+    int n,arr[1000],i,dc=0,k,c=0;
     scanf("%d%d",&n,&k);
     for(i=0;i<n;i++)
     {
@@ -26,7 +26,7 @@ int main()
     {
         dc=0;
         dc=digit_count(arr[i]);
-        if(digit_count(arr[i])==k)
+        if(dc==k)
         {
             c++;
         }
