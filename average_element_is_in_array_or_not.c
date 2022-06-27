@@ -1,0 +1,30 @@
+#include<stdio.h>
+int main()
+{
+    int n,arr[1000],i,m=0,s=0,avrg=0;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+       s=s+arr[i];
+       avrg=s/n;
+    }
+    for(i=0;i<n;i++)
+    {
+        if(arr[i]==avrg)
+        {
+            m=1;
+        }
+    }
+    if(m==1)
+    {
+        printf("True");
+    }
+    else
+    {
+        printf("False");
+    }
+}
