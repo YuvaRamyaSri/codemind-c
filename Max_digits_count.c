@@ -1,7 +1,7 @@
 #include<stdio.h>
 int digit_count(int n)
 {
-    int dc=0,d;
+    int d,dc=0;
     while(n!=0)
     {
         d=n%10;
@@ -12,7 +12,7 @@ int digit_count(int n)
 }
 int main()
 {
-    int n,arr[100],max=0,dc,i,c=0;
+    int n,arr[100],i,m=0,dc=0,c=0;
     scanf("%d",&n);
     for(i=0;i<n;i++)
     {
@@ -22,14 +22,14 @@ int main()
     {
         dc=0;
         dc=digit_count(arr[i]);
-            if(dc>max)
-            {
-                max=dc;
-            }
+        if(m<dc)
+        {
+            m=dc;
+        }
     }
     for(i=0;i<n;i++)
     {
-        if(digit_count(arr[i])==max)
+        if(digit_count(arr[i])==m)
         {
             c++;
         }
