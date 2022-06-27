@@ -1,31 +1,30 @@
 #include<stdio.h>
-int digit_count(int n)
+int digit(int a)
 {
-    int dc=0,d;
-    if(n==0)
+    int d,dc=0;
+    if(a==0)
     {
-        return 1;
+    return 1;
     }
-    while(n!=0)
+    while(a)
     {
-        d=n%10;
-        n=n/10;
-        dc++;
+      d=a%10;
+      dc++;
+      a=a/10;
     }
     return dc;
 }
 int main()
 {
-    int n,arr[1000],dc,i,c=0,k;
+    int n,a[100],i,c;
     scanf("%d",&n);
     for(i=0;i<n;i++)
-    {
-        scanf("%d",&arr[i]);
-    }
+   {
+       scanf("%d",&a[i]);
+   }
     for(i=0;i<n;i++)
-    {
-        dc=0;
-        dc=digit_count(arr[i]);
-      printf("%d ",dc);
-    }
+   {
+       c=digit(a[i]);
+       printf("%d ",c);
+   }
 }
