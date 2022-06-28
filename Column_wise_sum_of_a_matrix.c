@@ -1,23 +1,28 @@
-#include<stdio.h>
+#include <stdio.h>
+
 int main()
 {
-    int n,m,a[100][100],i,j,s;
-    scanf("%d %d",&n,&m);
-    for(i=0;i<n;i++)
+    int i, j, m, n;
+    int matrix[10][20];
+    int sumR, sumC;
+    scanf("%d", &m);
+    scanf("%d", &n);
+    for (i = 0; i < m; i++)
     {
-        for(j=0;j<m;j++)
+        for (j = 0; j < n; j++)
         {
-            scanf("%d",&a[i][j]);
+            scanf("%d", &matrix[i][j]);
         }
     }
-    for(j=0;j<m;j++)
+    for (i = 0; i < n; i++)
     {
-        s=0;
-        for(i=0;i<n;i++)
+        sumC = 0;
+        for (j = 0; j < m; j++)
         {
-            s=s+a[i][j];
+            sumC += matrix[j][i];
         }
-        printf("%d ",s);
+        printf("%d ", sumC);
     }
-    
+
+    return 0;
 }
