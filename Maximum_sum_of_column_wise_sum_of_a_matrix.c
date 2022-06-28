@@ -1,8 +1,9 @@
 #include<stdio.h>
 int main()
 {
-    int n,m,a[100][100],i,j,s,max=0;
-    scanf("%d %d",&n,&m);
+    int n,m;
+    scanf("%d%d",&n,&m);
+    int a[n][m],i,j;
     for(i=0;i<n;i++)
     {
         for(j=0;j<m;j++)
@@ -10,18 +11,26 @@ int main()
             scanf("%d",&a[i][j]);
         }
     }
-    for(j=0;j<m;j++)
-    {
-        s=0;
-        for(i=0;i<n;i++)
+    int sum=0;
+    
+        for(j=0;j<n;j++)
         {
-            s=s+a[i][j];
+          sum=sum+a[j][0]; 
         }
-        if(max<s)
+    int k=sum;
+    for(i=1;i<m;i++)
+    {
+        sum=0;
+        for(j=0;j<n;j++)
         {
-            max=s;
+            sum=sum+a[j][i];
+        }
+        if(k<=sum)
+        {
+            k=sum;
         }
     }
-    printf("%d",max);
+    printf("%d",k);
+    return 0;
     
 }
