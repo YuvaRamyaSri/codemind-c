@@ -1,45 +1,39 @@
 #include<stdio.h>
 int main()
 {
-    int n,m,a[100][100],i,j,s,max=0,maxi=0,c=0;
-    scanf("%d %d",&n,&m);
-    for(i=0;i<n;i++)
+    int mat[12][12];
+    int i,j,r,k,s=0,l=0;
+    scanf("%d %d",&r,&k);
+    for(i=0;i<r;i++)
     {
-        for(j=0;j<m;j++)
+        for(j=0;j<k;j++)
         {
-            scanf("%d",&a[i][j]);
+            scanf("%d",&mat[i][j]);
         }
     }
-    for(j=0;j<m;j++)
+    for(i=0;i<k;i++)
     {
         s=0;
-        for(i=0;i<n;i++)
+        for(j=0;j<r;j++)
         {
-            s=s+a[i][j];
+            s+=mat[j][i];
         }
-        if(max<s)
+        if(s>=l)
         {
-            max=s;
+            l=s;
         }
     }
-    for(i=0;i<n;i++)
+    for(i=0;i<r;i++)
     {
-        c=0;
-        for(j=0;j<m;j++)
+        s=0;
+        for(j=0;j<k;j++)
         {
-            c=c+a[i][j];
+            s+=mat[i][j];
         }
-        if(maxi<c)
+        if(s>=l)
         {
-            maxi=c;
+            l=s;
         }
     }
-    if(max>maxi)
-    {
-        printf("%d",max);
-    }
-    else
-    {
-        printf("%d",maxi);
-    }
+    printf("%d",l);
 }
